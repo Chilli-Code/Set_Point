@@ -80,11 +80,12 @@ class _LoginScreenState extends State<LoginScreen>
     return Scaffold(
       body: Stack(
         children: [
-          // 🔹 Imagen de fondo
           Positioned.fill(
-            child: Image.network(
-              "https://i.pinimg.com/736x/ba/fb/aa/bafbaa9766ecf329a7b20ca9816ab330.jpg",
-              fit: BoxFit.cover,
+            child: Image.asset(
+              "assets/Fondo_Login.jpg",
+              width: double.infinity, // ✅ Asegura que ocupe todo el ancho
+              height: double.infinity, // ✅ Asegura que ocupe toda la altura
+              fit: BoxFit.cover, // ✅ Cubre toda la pantalla sin distorsión
             ),
           ),
 

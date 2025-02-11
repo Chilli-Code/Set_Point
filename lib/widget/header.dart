@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/pantalla/login_page.dart';
+import 'package:flutter_application_3/pantalla/profile_screen.dart';
 
 class Header extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -69,6 +70,10 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
               _buildOption(context, Icons.account_circle, 'Perfil', () {
                 print("Perfil seleccionado");
                 Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileScreen()),
+                );
               }),
               _buildOption(context, Icons.logout, 'Cerrar sesión', () {
                 print("Cerrar sesión seleccionada");

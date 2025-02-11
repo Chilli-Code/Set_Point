@@ -9,6 +9,7 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController lastNameController = TextEditingController();
+  final TextEditingController nameUser = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
 
@@ -21,9 +22,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
         children: [
           // 📌 Imagen de fondo
           Positioned.fill(
-            child: Image.network(
-              "https://i.pinimg.com/736x/ba/fb/aa/bafbaa9766ecf329a7b20ca9816ab330.jpg",
-              fit: BoxFit.cover,
+            child: Image.asset(
+              "assets/Fondo_Login.jpg",
+              width: double.infinity, // ✅ Asegura que ocupe todo el ancho
+              height: double.infinity, // ✅ Asegura que ocupe toda la altura
+              fit: BoxFit.cover, // ✅ Cubre toda la pantalla sin distorsión
             ),
           ),
 
@@ -71,6 +74,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   SizedBox(height: 15),
                   _buildTextField(
                       "Apellido", Icons.person_outline, lastNameController),
+                  SizedBox(height: 15),
+                  _buildTextField(
+                      "Nombre de usuario", Icons.assistant_rounded, nameUser),
                   SizedBox(height: 15),
                   _buildTextField("Teléfono", Icons.phone, phoneController,
                       isNumber: true),
@@ -139,7 +145,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
           prefixIcon: Icon(Icons.sports_volleyball, color: Colors.white),
         ),
         style: TextStyle(color: Colors.white, fontSize: 16),
-        items: ["Jugador", "Creador de Torneo"].map((String role) {
+        items: [
+          "Jugador",
+        ].map((String role) {
           return DropdownMenuItem<String>(
             value: role,
             child: Text(role, style: TextStyle(color: Colors.white)),
@@ -160,6 +168,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       onPressed: () {
         print("Nombre: ${nameController.text}");
         print("Apellido: ${lastNameController.text}");
+        print("Nombre de usuario: ${nameUser.text}");
         print("Teléfono: ${phoneController.text}");
         print("Correo: ${emailController.text}");
         print("Rol: $selectedRole");
