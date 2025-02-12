@@ -1,8 +1,12 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'login_page.dart'; // 📌 Importamos la pantalla de login
 
 class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _RegisterScreenState createState() => _RegisterScreenState();
 }
 
@@ -32,6 +36,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
           // 📌 Capa oscura para mejorar el contraste
           Container(
+            // ignore: deprecated_member_use
             color: Colors.black.withOpacity(0.6),
           ),
 
@@ -63,6 +68,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               width: double.infinity,
               padding: EdgeInsets.all(20),
               decoration: BoxDecoration(
+                // ignore: deprecated_member_use
                 color: Colors.black.withOpacity(0.6),
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               ),
@@ -115,6 +121,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         hintStyle: TextStyle(color: Colors.white70),
         prefixIcon: Icon(icon, color: Colors.white),
         filled: true,
+        // ignore: deprecated_member_use
         fillColor: Colors.white.withOpacity(0.2),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
@@ -133,6 +140,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 15),
       decoration: BoxDecoration(
+        // ignore: deprecated_member_use
         color: Colors.white.withOpacity(0.2),
         borderRadius: BorderRadius.circular(30),
         border: Border.all(color: Colors.white38),
